@@ -10,8 +10,8 @@ const geocode = async (address) =>{
             }
             const {center} = response.body.features[0]
             let data = {
-                latitude: center[0],
-                longitude: center[1],
+                latitude: center[1],
+                longitude: center[0],
                 location: response.body.features[0].place_name
             }
             resolve(data)
