@@ -9,4 +9,4 @@ and [OpenWeather](https://openweathermap.org/). Here is a diagram that describes
 ## Current Status
 This project is currently in development. I created this website in early 2019 and have learnt a lot since then. The frontend is going to be completely redesigned using 
 [React](https://reactjs.org/) to create a more interactive user interface. Moreover, the responsiveness of this application is quite poor and the user interface on mobile 
-devices is horrible. Thus, there is currently a seperate client directory with boilerplate code. 
+devices is horrible. As a result, there is currently a seperate client directory with boilerplate code to develop a responsive frontend. 
