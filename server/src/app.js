@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const cors = require('cors')
 
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
@@ -8,6 +9,8 @@ const getDay = require('./utils/unixTimeConverter')
 
 const app = express()
 const port = process.env.PORT || 8080
+
+app.use(cors())
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath));
