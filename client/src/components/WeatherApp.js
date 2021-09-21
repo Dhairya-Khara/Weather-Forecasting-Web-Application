@@ -1,4 +1,5 @@
 import React from 'react'
+import LocationSummary from './LocationSummary'
 import Searchbox from './Searchbox'
 
 export default class WeatherApp extends React.Component{
@@ -6,6 +7,7 @@ export default class WeatherApp extends React.Component{
         return(
             <div>
                 <Searchbox/>
+                {/* <LocationSummary/> */}
             </div>
         )
     }
