@@ -1,8 +1,9 @@
 import React from 'react'
 
-import LocationSummary  from './LocationSummary'
+import { connect } from 'react-redux'
+import { changeWeahterData } from '../actions'
 
-export default class Searchbox extends React.Component {
+class Searchbox extends React.Component {
 
     searchForLocation = (event) => {
         event.preventDefault()
@@ -12,10 +13,8 @@ export default class Searchbox extends React.Component {
             // console.log(JSON.parse(response))
             return response.json()
         }).then((response)=>{
-            console.log(response)
-            return(
-                <LocationSummary/>
-            )
+            // console.log(response)
+            this.props.dispatch(changeWeahterData(response))
         })
     }
 
@@ -29,7 +28,7 @@ export default class Searchbox extends React.Component {
                 <div className="wrapper">
                     <div className="searchBar">
                         <form onSubmit = {this.searchForLocation}>
-                            <input id="searchQueryInput" type="text" name="location" placeholder="Search" />
+                            <input id="searchQueryInput" type="text" name="location" placeholder="Search"  autoComplete="off"/>
                             <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit" />
                         </form>
                     </div>
@@ -38,3 +37,9 @@ export default class Searchbox extends React.Component {
         )
     }
 }
+
+// const mapStateToProps = ()=>{
+//     re
+// }
+
+export default connect()(Searchbox)

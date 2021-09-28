@@ -7,7 +7,7 @@ export default class WeatherApp extends React.Component{
         return(
             <div>
                 <Searchbox/>
-                {/* <LocationSummary/> */}
+                <LocationSummary/>
             </div>
         )
     }
