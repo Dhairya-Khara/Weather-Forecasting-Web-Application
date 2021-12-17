@@ -33,6 +33,7 @@ app.get('/weather', async (req, res) => {
                 const forecastData = await forecast(geocodeData.latitude, geocodeData.longitude)
                 const data = {
                     location: geocodeData.location,
+                    day: getDay(forecastData.daily[0].dt),
 
                     currentTemp: forecastData.current.temp,
                     currentFeels_like: forecastData.current.feels_like,
@@ -41,6 +42,7 @@ app.get('/weather', async (req, res) => {
                     currentMax: forecastData.daily[0].temp.max,
                     currentMin: forecastData.daily[0].temp.min,
                     currentPrecipProbability: forecastData.daily[0].pop,
+                    currentWindSpeed: forecastData.current.wind_speed,
 
                     day2Max: forecastData.daily[1].temp.max,
                     day2Min: forecastData.daily[1].temp.min,
@@ -104,7 +106,76 @@ app.get('/weather', async (req, res) => {
         }
         catch (e) {
             console.log(e)
-            res.send({error:true, errorText:e})
+            const data = {
+                error: true,
+
+                location: "",
+                day: "",
+            
+                currentTemp: "",
+                currentFeels_like: "",
+                currentDescription: "",
+                currentIcon: "",
+                currentMax: "",
+                currentMin: "",
+                currentPrecipProbability: "",
+                currentWindSpeed: "",
+            
+                day2Max: "",
+                day2Min: "",
+                day2FeelsLikeMax: "",
+                day2FeelsLikeMin:"",
+                day2Description: "",
+                day2PrecipProbability: "",
+                day2Icon: "",
+                day2Day: "",
+            
+                day3Max: "",
+                day3Min: "",
+                day3FeelsLikeMax: "",
+                day3FeelsLikeMin: "",
+                day3Description: "",
+                day3PrecipProbability: "",
+                day3Icon: "",
+                day3Day: "",
+            
+                day4Max: "",
+                day4Min: "",
+                day4FeelsLikeMax: "",
+                day4FeelsLikeMin: "",
+                day4Description: "",
+                day4PrecipProbability: "",
+                day4Icon: "",
+                day4Day: "",
+            
+                day5Max: "",
+                day5Min: "",
+                day5FeelsLikeMax: "",
+                day5FeelsLikeMin: "",
+                day5Description: "",
+                day5PrecipProbability: "",
+                day5Icon: "",
+                day5Day: "",
+            
+                day6Max: "",
+                day6Min: "",
+                day6FeelsLikeMax: "",
+                day6FeelsLikeMin: "",
+                day6Description: "",
+                day6PrecipProbability: "",
+                day6Icon: "",
+                day6Day: "",
+            
+                day7Max: "",
+                day7Min: "",
+                day7FeelsLikeMax: "",
+                day7FeelsLikeMin: "",
+                day7Description: "",
+                day7PrecipProbability: "",
+                day7Icon: "",
+                day7Day: "",
+            }
+            res.send(data)
         }
     }
 
