@@ -1,5 +1,6 @@
 const defaultState = {
     location: "",
+    day: "",
 
     currentTemp: "",
     currentFeels_like: "",
@@ -8,6 +9,7 @@ const defaultState = {
     currentMax: "",
     currentMin: "",
     currentPrecipProbability: "",
+    currentWindSpeed: "",
 
     day2Max: "",
     day2Min: "",
@@ -70,6 +72,7 @@ const reducer = (state = defaultState, action) =>{
             return {
                 ...state,
                 location: action.location,
+                day: action.day,
 
                 currentTemp: action.currentTemp,
                 currentFeels_like: action.currentFeels_like,
@@ -78,6 +81,7 @@ const reducer = (state = defaultState, action) =>{
                 currentMax: action.currentMax,
                 currentMin: action.currentMin,
                 currentPrecipProbability: action.currentPrecipProbability,
+                currentWindSpeed: action.currentWindSpeed,
             
                 day2Max: action.day2Max,
                 day2Min: action.day2Min,
@@ -122,7 +126,7 @@ const reducer = (state = defaultState, action) =>{
                 day6Description: action.day6Description,
                 day6PrecipProbability: action.day6PrecipProbability,
                 day6Icon: action.day6Icon,
-                day6Day: action.day6day,
+                day6Day: action.day6Day,
             
                 day7Max: action.day7Max,
                 day7Min: action.day7Min,
