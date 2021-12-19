@@ -16,4 +16,4 @@ export default class WeatherApp extends React.Component{
             </div>
         )
     }
-}
+}   

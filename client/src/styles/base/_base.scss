@@ -1,16 +1,86 @@
-body{
+body {
     color: #333333;
     font-family: Arial, Helvetica, sans-serif;
-    
-    
-    background-image: url('../../images/background.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #464646;
     background-color: black;
     color: black;
+}
 
+.location_summary {
+    color: white;
+    margin-left: 20px;
+}
 
+.container {
+    display: flex;
+    justify-content: space-around;
+    // width: 100%;
+}
+
+.current_container {
+    display: flex;
+    color: white;
+}
+
+.current_summary_container {
+    width: 30%;
+}
+
+.current_summary_with_bg {
+    background-color: #ffffff;
+    opacity: 0.6;
+
+    display: flex;
+    color: black;
+    justify-content: space-around;
+}
+
+.future_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.future_card_desktop {
+    color: white;
+    text-align: center;
+}
+
+.error_text {
+    color: white;
+    text-align: center;
+}
+
+.future_card_mobile{
+    display: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
+
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    .current_summary_container {
+        width: 100%;
+    }
+
+    .future_card_desktop {
+        display: none;
+    }
+
+    .future_container{
+        display: block;
+    }
+
+    .future_card_mobile{
+        margin-left: 20px;
+        color: white;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+    
+}
