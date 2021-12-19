@@ -2,20 +2,13 @@ import React from "react";
 import { connect } from 'react-redux'
 
 class CurrentForecast extends React.Component {
-    constructor(props) {
-        super(props)
-
-    }
-
-
-
     render() {
         return (
             <div>
                 <div className="container">
                     <div className="current_container" >
                         <div className="current_image">
-                            {this.props.currentIcon !== "" ? <img src={"http://openweathermap.org/img/wn/" + this.props.currentIcon + "@2x.png"}></img> : ""}
+                            {this.props.currentIcon !== "" ? <img alt = "" src={"http://openweathermap.org/img/wn/" + this.props.currentIcon + "@2x.png"}></img> : ""}
                         </div>
                         <div className="current_temp">
                             {this.props.currentTemp !== "" ? <h1>{this.props.currentTemp}°</h1> : ""}

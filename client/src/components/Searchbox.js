@@ -11,6 +11,30 @@ class Searchbox extends React.Component {
         this.state = {
             error: ""
         }
+
+        fetch('http://localhost:8080/weather?address=Toronto').then((response) => {
+            // console.log(JSON.parse(response))
+            return response.json()
+        }).then((response) => {
+            this.props.dispatch(changeWeahterData(response))
+
+            if (response.error) {
+                this.setState(() => {
+                    return (
+                        { error: true }
+                    )
+                })
+
+            }
+            else {
+                this.props.dispatch(changeWeahterData(response))
+                this.setState(() => {
+                    return (
+                        { error: false }
+                    )
+                })
+            }
+        })
     }
 
     searchForLocation = (event) => {
@@ -43,7 +67,6 @@ class Searchbox extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <div className="wrapper">
