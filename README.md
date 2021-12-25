@@ -4,4 +4,9 @@ and [OpenWeather](https://openweathermap.org/). The front-end is developed using
 
 ![Web Application's Architecture](https://i.ibb.co/y6Rwpg2/Weather-app-architecture.png)
 
+## IMPORTANT
+This repository is the production build. Hence, it is not recommended to try and run this application from source. This repository is missing some esssential components
+required for the application to run. For example environment variables such as API keys for Mapbox and OpenWeather. These env variables are stored on a local dev.env file and for
+obvious reasons, this file has not been comitted to this public github repo. 
+
 
