@@ -30,7 +30,7 @@ class CurrentForecast extends React.Component {
                                 {this.props.currentWindSpeed !== "" ? <h2>{this.props.currentWindSpeed} m/s</h2> : ""}
                                 {this.props.currentWindSpeed !== "" ? <p>Wind</p> : ""}
                                 <br></br>
-                                {this.props.currentPrecipProbability !== "" ? <h2>{(this.props.currentPrecipProbability) * 100}%</h2> : ""}
+                                {this.props.currentPrecipProbability !== "" ? <h2>{(Math.round(this.props.currentPrecipProbability*100))}%</h2> : ""}
                                 {this.props.currentPrecipProbability !== "" ? <p>Precipitation</p> : ""}
                             </div>
                         </div>
